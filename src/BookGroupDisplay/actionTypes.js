@@ -1,0 +1,1 @@
+export const JOIN_BOOK_GROUP = 'JOIN_BOOK_GROUP';
