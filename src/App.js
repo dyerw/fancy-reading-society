@@ -6,11 +6,11 @@ import Login from './Login'
 let App = (props) => {
     let {
       isShowingLoginModal,
-      dispatch
+      ...rest
     } = props;
 
     // We can show the login modal on any page
-    let loginModal = isShowingLoginModal ? <Login.components.LoginModal dispatch={dispatch} /> : null;
+    let loginModal = isShowingLoginModal ? <Login.components.LoginModal {...rest} /> : null;
 
     return (
         <div>
@@ -22,7 +22,9 @@ let App = (props) => {
 
 let mapStateToProps = (state) => {
   return {
-    isShowingLoginModal: Login.selectors.getIsShowingLoginModal(state)
+    isShowingLoginModal: Login.selectors.getIsShowingLoginModal(state),
+    usernameValue: Login.selectors.getUsernameValue(state),
+    passwordValue: Login.selectors.getPasswordValue(state)
   }
 }
 

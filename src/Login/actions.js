@@ -16,3 +16,13 @@ export const loginConfirmed = (userToken) => ({
   type: t.LOGIN_CONFIRMED,
   payload: { userToken }
 });
+
+export const updateUsername = (value) => ({
+  type: t.USERNAME_FIELD_UPDATED,
+  payload: { value }
+});
+
+export const updatePassword = (value) => ({
+  type: t.PASSWORD_FIELD_UPDATED,
+  payload: { value }
+});

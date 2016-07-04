@@ -1,8 +1,14 @@
 import * as t from './actionTypes'
 
+const REGISTERING = 0;
+const LOGGING_IN = 1;
+
 const initialState = {
   userToken: null,
-  isShowingLoginModal: false
+  isShowingLoginModal: false,
+  logInMode: LOGGING_IN,
+  usernameValue: "",
+  passwordValue: ""
 }
 
 let reducer = (state = initialState, { type, payload }) => {
@@ -17,6 +23,18 @@ let reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isShowingLoginModal: false
+      }
+
+    case t.USERNAME_FIELD_UPDATED:
+      return {
+        ...state,
+        usernameValue: payload.value
+      }
+
+    case t.PASSWORD_FIELD_UPDATED:
+      return {
+        ...state,
+        passwordValue: payload.value
       }
 
     case t.LOGIN_CONFIRMED:
