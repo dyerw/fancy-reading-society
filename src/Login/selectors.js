@@ -8,3 +8,4 @@ export const getIsLoggedIn = (state) => getUserToken(state) != null;
 export const getIsShowingLoginModal = (state) => state[constants.NAME].isShowingLoginModal;
 export const getUsernameValue = (state) => state[constants.NAME].usernameValue;
 export const getPasswordValue = (state) => state[constants.NAME].passwordValue;
+export const getLogInMode = (state) => state[constants.NAME].logInMode;

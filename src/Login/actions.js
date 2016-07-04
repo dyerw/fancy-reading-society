@@ -26,3 +26,11 @@ export const updatePassword = (value) => ({
   type: t.PASSWORD_FIELD_UPDATED,
   payload: { value }
 });
+
+export const switchToRegister = () => ({
+  type: t.SWITCH_TO_REGISTER_MODE
+});
+
+export const switchToLogin = () => ({
+  type: t.SWITCH_TO_LOGIN_MODE
+});

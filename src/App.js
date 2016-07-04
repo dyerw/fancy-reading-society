@@ -24,7 +24,8 @@ let mapStateToProps = (state) => {
   return {
     isShowingLoginModal: Login.selectors.getIsShowingLoginModal(state),
     usernameValue: Login.selectors.getUsernameValue(state),
-    passwordValue: Login.selectors.getPasswordValue(state)
+    passwordValue: Login.selectors.getPasswordValue(state),
+    logInMode: Login.selectors.getLogInMode(state)
   }
 }
 

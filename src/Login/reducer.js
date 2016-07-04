@@ -1,12 +1,10 @@
 import * as t from './actionTypes'
-
-const REGISTERING = 0;
-const LOGGING_IN = 1;
+import * as c from './constants'
 
 const initialState = {
   userToken: null,
   isShowingLoginModal: false,
-  logInMode: LOGGING_IN,
+  logInMode: c.LOGGING_IN,
   usernameValue: "",
   passwordValue: ""
 }
@@ -23,6 +21,18 @@ let reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isShowingLoginModal: false
+      }
+
+    case t.SWITCH_TO_REGISTER_MODE:
+      return {
+        ...state,
+        logInMode: c.REGISTERING
+      }
+
+    case t.SWITCH_TO_LOGIN_MODE:
+      return {
+        ...state,
+        logInMode: c.LOGGING_IN
       }
 
     case t.USERNAME_FIELD_UPDATED:
