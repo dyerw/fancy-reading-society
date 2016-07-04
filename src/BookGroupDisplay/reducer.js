@@ -1,5 +1,7 @@
 import * as t from './actionTypes'
 
+import Login from '../Login'
+
 const initialState = {
   bookGroups: [{
     id: 0,
@@ -30,13 +32,14 @@ const initialState = {
   }]
 }
 
-let reducer = (state = initialState, action) => {
-  switch(action.type) {
-    case t.JOIN_BOOK_GROUP:
+let reducer = (state = initialState, { type, payload }) => {
+  switch(type) {
+
+    case t.JOIN_BOOK_GROUP_CONFIRMED:
       return {
         ...state,
         bookGroups: state.bookGroups.map((bookGroup) => {
-          if (bookGroup.id == action.payload.id) {
+          if (bookGroup.id == payload.id) {
             return {
               ...bookGroup,
               currentMembers: bookGroup.currentMembers + 1
@@ -46,6 +49,7 @@ let reducer = (state = initialState, action) => {
           }
         })
       }
+
 
     default:
       return state;

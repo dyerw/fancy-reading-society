@@ -4,18 +4,10 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import Store from './store'
 
-
+import App from './App'
 import LandingPage from './components/LandingPage'
 
 const history = syncHistoryWithStore(browserHistory, Store);
-
-let App = (props) => {
-    return (
-        <div>
-            {props.children}
-        </div>
-    );
-}
 
 let Routes = (
     <Provider store={Store}>

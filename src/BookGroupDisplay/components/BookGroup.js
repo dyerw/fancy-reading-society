@@ -20,8 +20,8 @@ let BookGroup = (props) => {
   return (
     <Col>
       <Row>
-        <Col xs={6}><img height="100" width="70" src={bookCoverImageUrl}/></Col>
-        <Col xs={6}>
+        <Col xs={4}><img height="100" width="70" src={bookCoverImageUrl}/></Col>
+        <Col xs={8}>
           <Row>{bookTitle}</Row>
           <Row>{bookAuthor}</Row>
           <Row>{bookPages} pages in {weeksToRead} weeks</Row>
