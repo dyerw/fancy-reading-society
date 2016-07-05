@@ -27,6 +27,11 @@ export const updatePassword = (value) => ({
   payload: { value }
 });
 
+export const updateRepeatPassword = (value) => ({
+  type: t.REPEAT_PASSWORD_FIELD_UPDATED,
+  payload: { value }
+});
+
 export const switchToRegister = () => ({
   type: t.SWITCH_TO_REGISTER_MODE
 });

@@ -6,7 +6,8 @@ const initialState = {
   isShowingLoginModal: false,
   logInMode: c.LOGGING_IN,
   usernameValue: "",
-  passwordValue: ""
+  passwordValue: "",
+  repeatPasswordValue: ""
 }
 
 let reducer = (state = initialState, { type, payload }) => {
@@ -20,7 +21,10 @@ let reducer = (state = initialState, { type, payload }) => {
     case t.HIDE_LOGIN_MODAL:
       return {
         ...state,
-        isShowingLoginModal: false
+        isShowingLoginModal: false,
+        usernameValue: "",
+        passwordValue: "",
+        repeatPasswordValue: ""
       }
 
     case t.SWITCH_TO_REGISTER_MODE:
@@ -45,6 +49,12 @@ let reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         passwordValue: payload.value
+      }
+
+    case t.REPEAT_PASSWORD_FIELD_UPDATED:
+      return {
+        ...state,
+        repeatPasswordValue: payload.value
       }
 
     case t.LOGIN_CONFIRMED:
